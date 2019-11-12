@@ -1,0 +1,346 @@
+@import url("https://fonts.googleapis.com/css?family=McLaren|Raleway&display=swap");
+
+$color-primary: rgb(100, 130, 194);
+$color-grey: rgb(207, 205, 205);
+$color-black: rgb(31, 31, 31);
+$color-light: rgb(241, 241, 241);
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit; /* no underline */
+}
+
+section {
+  width: 100%;
+
+  .title {
+    letter-spacing: 5px;
+    text-align: center;
+    color: $color-light;
+    font-size: 40px;
+    padding: 10px;
+    margin: 70px 0px 10px 0px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .title {
+      font-size: 30px;
+    }
+  }
+}
+
+.navbar {
+  ul {
+    display: flex;
+    list-style: none;
+    padding-right: 40px;
+  }
+
+  li {
+    color: $color-grey;
+    margin: 10px;
+  }
+}
+
+#side-menu {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 2;
+  color: $color-light;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+  }
+
+  li {
+    margin: 10px;
+  }
+
+  #menu-close {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 10px;
+    img {
+      height: 25px;
+      width: 25px;
+      filter: invert(100%);
+    }
+  }
+}
+
+header {
+  width: 100vw;
+  height: 50px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  flex-direction: row;
+  color: $color-light;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  transition: background-color 0.3s ease-out;
+
+  h1 {
+    visibility: hidden;
+    opacity: 1;
+    margin-left: 10px;
+    font-size: 20px;
+    transition: opacity 0.3s ease-out;
+  }
+
+  @media screen and (max-width: 600px) {
+    .navbar {
+      display: none;
+    }
+  }
+
+  #menu-open {
+    margin-right: 10px;
+    img {
+      height: 25px;
+      width: 25px;
+      filter: invert(100%);
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    #menu-open {
+      display: none;
+    }
+  }
+}
+
+#home {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("./asset/img/main.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  min-height: 100vh;
+  position: relative;
+
+
+  h1 {
+    color: $color-light;
+    text-transform: capitalize;
+    letter-spacing: 5px;
+    text-shadow: rgb(3, 3, 3) 0px 0px 0px;
+    margin-bottom: 50px;
+    font-size: 80px;
+    text-shadow: 2px 2px 1px $color-black;
+    word-break: normal;
+    margin-left: 10px;
+    animation: fade 1s linear;
+    opacity: 1;
+  }
+
+  p {
+    color: $color-primary;
+    text-shadow: rgb(0, 0, 0) 0px 0px 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    text-shadow: 2px 2px 2px $color-black;
+    margin: 0px;
+    margin-left: 10px;
+    animation: fade 1s linear 0.5s both;
+  }
+
+
+  @keyframes fade {
+    from {  opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @media screen and (max-width: 600px) {
+    h1 {
+      font-size: 50px;
+      text-align: center;
+      margin-left: 0px;
+    }
+
+    p {
+      text-align: center;
+      margin-left: 0px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    p {
+      font-size: 20px;
+    }
+  }
+
+  img {
+    position: relative;
+    height: 190px;
+    width: 200px;
+    border-radius: 50%;
+    border: 1px solid $color-black;
+  }
+}
+
+#portifolio {
+  background-color: $color-black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: center;
+  position: relative;
+
+  .title {
+    border-bottom: 5px solid $color-primary;
+  }
+
+  .container {
+    display: flex;    
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .card {
+      position: relative;
+      margin: 10px;
+      width: 300px;
+      height: 300px;
+  
+      img {
+        width: 300px;
+      }
+  
+      .card-info {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+        background-color: $color-primary;
+        color: $color-light;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        transition: opacity 0.3s ease-out;
+  
+        h1 {
+          margin: 20px 0px 10px 0px;
+          flex: 0;
+          text-align: center;
+          font-size: 25px;
+          letter-spacing: 1px;
+        }
+  
+        p {
+          flex: 0;
+          line-height: 25px;
+          margin: 10px;
+          text-align: justify;
+        }
+  
+        .card-info-title {
+          font-weight: bold;
+        }
+        .card-info-subtitle {
+          text-align: center;
+          font-weight: bold;
+          background-color: $color-light;
+          color: $color-primary;
+        }
+  
+        a {
+          flex: 1 auto 100%;
+          text-align: center;
+          text-transform: uppercase;
+          margin: 10px;
+          border: 2px solid $color-light;
+          border-radius: 10px;
+          padding: 2px;
+        }
+      }
+    }
+  }
+
+  .card:hover .card-info {
+    visibility: visible;
+    opacity: 0.92;
+  }
+}
+
+#contato {
+  background-color: $color-primary;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+
+  .title {
+    border-bottom: 5px solid $color-black;
+  }
+
+  p {
+    text-align: center;
+    padding-left: 10px;
+    color: $color-light;
+    font-size: 20px;
+  }
+
+  .social-network {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: wrap;
+    justify-content: center;
+
+    img {
+      height: 50px;
+      width: 50px;
+      filter: invert(100%);
+      margin: 30px;
+    }
+  }
+}
+
+
+
+//Scroolbar
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px $color-black;
+  background-color: $color-black;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $color-primary;
+
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0.5, rgba(255, 255, 255, 0.2)), to(transparent));
+}
