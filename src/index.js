@@ -1,4 +1,3 @@
-import './asset/img/profile.png';
 import './asset/img/bars-solid.svg';
 import './asset/img/times-solid.svg';
 import './asset/img/jugoo-app.jpg';
@@ -9,6 +8,7 @@ import './asset/img/recanto-flyer-cartão.jpg';
 import './asset/img/cantinho-da-biju.jpg';
 import './asset/img/linkedin.svg';
 import './asset/img/github.svg';
+import './asset/img/renan-logo.png';
 import 'normalize.css';
 import 'normalize.css';
 import './style.scss';
@@ -34,16 +34,14 @@ window.onscroll = () => {
 
   const scrollTop = document.documentElement.scrollTop;
   const header = document.querySelector("header");
-  const headerH1 = document.querySelector("header h1");
+  const headerimg = document.querySelector("header img");
 
   if (scrollTop >= 600) {
     header.style.backgroundColor = "rgb(31, 31, 31)";
-    headerH1.style.visibility = "visible";
-    headerH1.style.opacity = "1";
+
   } else {
     header.style.backgroundColor = "";
-    headerH1.style.visibility = "hidden";
-    headerH1.style.opacity = "0";
+
   }
 
   const scrolled = window.pageYOffset;

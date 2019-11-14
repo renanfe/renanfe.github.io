@@ -96,6 +96,12 @@ header {
   z-index: 1;
   transition: background-color 0.3s ease-out;
 
+  img {
+    height: 35px;
+    width: 35px;
+    margin-left: 20px;
+  }
+
   h1 {
     visibility: hidden;
     opacity: 1;
