@@ -1,3 +1,5 @@
+import 'normalize.css';
+import './style.scss';
 import './asset/img/bars-solid.svg';
 import './asset/img/times-solid.svg';
 import './asset/img/jugoo-app.jpg';
@@ -9,9 +11,6 @@ import './asset/img/cantinho-da-biju.jpg';
 import './asset/img/linkedin.svg';
 import './asset/img/github.svg';
 import './asset/img/renan-logo.png';
-import 'normalize.css';
-import 'normalize.css';
-import './style.scss';
 
 document.getElementById("menu-open").addEventListener("click", openMenu, false);
 document.getElementById("menu-close").addEventListener("click", closeMenu, false);
