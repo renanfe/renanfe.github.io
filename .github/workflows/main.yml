@@ -11,6 +11,7 @@ jobs:
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.0.3
       with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} 
         publish_branch: master
         publish_dir: ./dist
         external_repository: renanfe/renanfe.github.io
