@@ -21,4 +21,4 @@ jobs:
         BRANCH: master
         FOLDER: dist
         CLEAN: true
-        CLEAN_EXCLUDE: ".gitignore"
+        CLEAN_EXCLUDE: '[".gitignore"]'
