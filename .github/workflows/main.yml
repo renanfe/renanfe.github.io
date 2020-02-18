@@ -1,17 +1,19 @@
 on:
   push:
     branches:
-    - master
+    - dev
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout
+      uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+      with:
+        persist-credentials: false
     - name: Run build
       run: npm build
-    - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3.0.3
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@3.2.1
       with:
-        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} 
-        publish_branch: master
-        publish_dir: ./dist
-        external_repository: renanfe/renanfe.github.io
+        BRANCH: master # The branch the action should deploy to.
+        FOLDER: dist # The folder the action should deploy.
