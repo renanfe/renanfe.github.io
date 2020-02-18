@@ -11,9 +11,10 @@ jobs:
       with:
         persist-credentials: false
     - name: Run build
-      run: npm build
+      run: npm run build
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.2.1
       with:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: master
         FOLDER: dist
